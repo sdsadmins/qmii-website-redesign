@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
 }
 #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 .preloader-inner { text-align: center; }
-.preloader-logo { font-family: var(--font-heading); font-size: 3rem; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 24px; }
+.preloader-logo-img { height: 60px; width: auto; margin-bottom: 24px; filter: brightness(1.1); }
 .preloader-bar { width: 200px; height: 3px; background: var(--border-subtle); border-radius: 2px; margin: 0 auto 12px; overflow: hidden; }
 .preloader-fill { height: 100%; width: 0%; background: var(--gradient-primary); border-radius: 2px; animation: preload 1.5s ease forwards; }
 @keyframes preload { to { width: 100%; } }
@@ -105,9 +105,9 @@ img { max-width: 100%; display: block; }
 .navbar { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; transition: all 0.3s ease; }
 .navbar.scrolled { background: rgba(10, 14, 23, 0.88); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border-subtle); }
 .navbar__inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.navbar__logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; display: flex; }
-.logo-q { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.2rem; }
-.logo-mii { color: var(--text-primary); }
+.navbar__logo { display: flex; align-items: center; }
+.navbar__logo-img { height: 44px; width: auto; filter: brightness(1.1); transition: opacity 0.3s; }
+.navbar__logo-img:hover { opacity: 0.85; }
 .navbar__links { display: flex; gap: 32px; }
 .nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; position: relative; }
 .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gradient-primary); transition: width 0.3s; }
