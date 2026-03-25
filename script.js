@@ -600,13 +600,21 @@
     // ==========================================
     // Floating cards animation (Hero 4)
     // ==========================================
+    const floatCards = document.querySelectorAll('.float-card');
+    const floatBaseTransforms = [
+        'rotate(-3deg)',   // card 1
+        'rotate(2deg)',    // card 2
+        'rotate(1.5deg)',  // card 3
+        'rotate(-2deg)'   // card 4
+    ];
+
     function animateFloatingCards() {
-        const cards = document.querySelectorAll('.float-card');
-        cards.forEach((card, i) => {
-            const t = clock.getElapsedTime();
-            const floatY = Math.sin(t * 0.8 + i * 1.5) * 8;
-            const floatR = Math.sin(t * 0.5 + i * 2) * 1.5;
-            card.style.transform += ` translateY(${floatY}px)`;
+        const t = clock.getElapsedTime();
+        floatCards.forEach((card, i) => {
+            const floatY = Math.sin(t * 0.6 + i * 1.8) * 10;
+            const floatX = Math.cos(t * 0.4 + i * 2.2) * 4;
+            const base = floatBaseTransforms[i] || '';
+            card.style.transform = `${base} translate(${floatX}px, ${floatY}px)`;
         });
         requestAnimationFrame(animateFloatingCards);
     }
